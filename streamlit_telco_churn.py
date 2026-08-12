@@ -111,7 +111,7 @@ st.markdown("""
 
 @st.cache_data(show_spinner=False)
 def load_and_clean_data():
-    df = pd.read_csv("WA_Fn-UseC_-Telco-Customer-Churn.csv")
+    df = pd.read_csv("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
     df["TotalCharges"] = df["TotalCharges"].fillna(df["TotalCharges"].median())
     df.drop_duplicates(inplace=True)
